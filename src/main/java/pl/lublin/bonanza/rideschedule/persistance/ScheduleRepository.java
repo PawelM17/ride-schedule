@@ -1,23 +1,9 @@
 package pl.lublin.bonanza.rideschedule.persistance;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import pl.lublin.bonanza.rideschedule.model.Horse;
-import pl.lublin.bonanza.rideschedule.model.Riding;
-import pl.lublin.bonanza.rideschedule.model.Schedule;
+import pl.lublin.bonanza.rideschedule.model.ScheduleEntity;
 
 @Repository
-public class ScheduleRepository {
-
-    private final Schedule schedule = new Schedule();
-
-    public void saveRiding(Riding riding) {
-        schedule.addRiding(riding);
-    }
-
-    public String getRidingList() {
-        return schedule.getRidingList();
-    }
-    public double getMinutes (Horse horse){
-        return schedule.getMinutes(horse);
-    }
+public interface ScheduleRepository extends CrudRepository<ScheduleEntity, Long> {
 }

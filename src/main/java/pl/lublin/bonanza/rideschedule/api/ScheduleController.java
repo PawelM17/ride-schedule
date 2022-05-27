@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.lublin.bonanza.rideschedule.model.Horse;
 import pl.lublin.bonanza.rideschedule.model.Riding;
+import pl.lublin.bonanza.rideschedule.model.ScheduleEntity;
 import pl.lublin.bonanza.rideschedule.service.ScheduleService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/schedule")
@@ -23,7 +26,7 @@ public class ScheduleController {
     }
 
     @GetMapping("/riding")
-    public String getRidingList() {
+    public List<ScheduleEntity> getRidingList() {
         return scheduleService.getRidingList();
     }
 

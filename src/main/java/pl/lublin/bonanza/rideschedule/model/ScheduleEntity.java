@@ -1,6 +1,7 @@
 package pl.lublin.bonanza.rideschedule.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "schedule")
 public class ScheduleEntity {
 
@@ -18,4 +20,10 @@ public class ScheduleEntity {
     private String horseName;
     private String riderName;
     private double minutes;
+
+    public ScheduleEntity(String horseName, String riderName, double minutes) {
+        this.horseName = horseName;
+        this.riderName = riderName;
+        this.minutes = minutes;
+    }
 }
