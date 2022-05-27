@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Schedule {
 
-    private Map<Horse, List<Riding>> ridingMap = new HashMap<>();
+    private final Map<Horse, List<Riding>> ridingMap = new HashMap<>();
 
     public void addRiding(Riding riding) {
         if (!ridingMap.containsKey(riding.getHorse())) {

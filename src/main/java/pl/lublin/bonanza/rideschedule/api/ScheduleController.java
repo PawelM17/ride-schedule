@@ -1,5 +1,6 @@
 package pl.lublin.bonanza.rideschedule.api;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,13 +12,10 @@ import pl.lublin.bonanza.rideschedule.service.ScheduleService;
 
 @RestController
 @RequestMapping("/api/schedule")
+@RequiredArgsConstructor
 public class ScheduleController {
 
-    private ScheduleService scheduleService;
-
-    public ScheduleController(ScheduleService scheduleService) {
-        this.scheduleService = scheduleService;
-    }
+    private final ScheduleService scheduleService;
 
     @PostMapping("/riding")
     public void saveRiding(@RequestBody Riding riding) {

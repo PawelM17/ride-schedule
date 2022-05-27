@@ -1,33 +1,14 @@
 package pl.lublin.bonanza.rideschedule.model;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+
+@Getter
+@ToString
+@RequiredArgsConstructor
 public class Riding {
-    private Rider rider;
-    private Horse horse;
-    private double minutes;
-
-    public Riding(Rider rider, Horse horse, double minutes) {
-        this.rider = rider;
-        this.horse = horse;
-        this.minutes = minutes;
-    }
-
-    public Rider getRider() {
-        return rider;
-    }
-
-    public Horse getHorse() {
-        return horse;
-    }
-
-    public double getMinutes() {
-        return minutes;
-    }
-
-    @Override
-    public String toString() {
-        return "Riding:" +
-            "rider=" + rider +
-            ", horse=" + horse +
-            ", minutes=" + minutes;
-    }
+    private final Rider rider;
+    private final Horse horse;
+    private final double minutes;
 }

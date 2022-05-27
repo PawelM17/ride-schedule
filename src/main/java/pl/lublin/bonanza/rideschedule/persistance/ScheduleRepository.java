@@ -8,7 +8,7 @@ import pl.lublin.bonanza.rideschedule.model.Schedule;
 @Repository
 public class ScheduleRepository {
 
-    private Schedule schedule = new Schedule();
+    private final Schedule schedule = new Schedule();
 
     public void saveRiding(Riding riding) {
         schedule.addRiding(riding);

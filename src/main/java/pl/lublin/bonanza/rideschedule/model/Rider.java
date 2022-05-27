@@ -1,33 +1,14 @@
 package pl.lublin.bonanza.rideschedule.model;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+
+@Getter
+@ToString
+@RequiredArgsConstructor
 public class Rider {
-    private String firstName;
-    private String lastName;
-    private int age;
-
-    public Rider(String firstName, String lastName, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    @Override
-    public String toString() {
-        return "Rider:" +
-            "firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            ", age=" + age;
-    }
+    private final String firstName;
+    private final String lastName;
+    private final int age;
 }
