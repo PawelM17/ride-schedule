@@ -10,15 +10,20 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "aggregated_riding_time")
-public class AggregatedRidingTimeEntity {
+@Table(name = "riding")
+public class RidingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "riding_time_id", nullable = false)
+    @Column(name = "riding_id", nullable = false)
     private Long id;
     private String horseName;
+    private String riderName;
     private double minutes;
+
+    public RidingEntity(String horseName, String riderName, double minutes) {
+        this.horseName = horseName;
+        this.riderName = riderName;
+        this.minutes = minutes;
+    }
 }
-
-

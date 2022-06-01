@@ -1,14 +1,10 @@
 package pl.lublin.bonanza.rideschedule.api;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.lublin.bonanza.rideschedule.model.Horse;
 import pl.lublin.bonanza.rideschedule.model.Riding;
-import pl.lublin.bonanza.rideschedule.model.ScheduleEntity;
+import pl.lublin.bonanza.rideschedule.model.RidingEntity;
 import pl.lublin.bonanza.rideschedule.service.ScheduleService;
 
 import java.util.List;
@@ -26,12 +22,13 @@ public class ScheduleController {
     }
 
     @GetMapping("/riding")
-    public List<ScheduleEntity> getRidingList() {
+    public List<RidingEntity> getRidingList() {
         return scheduleService.getRidingList();
     }
 
-    @PostMapping("/riding/horse/minutes")
-    public double getMinutes(@RequestBody Horse horse) {
+    @GetMapping("/riding/horse/minutes")
+    public Double getMinutes(@RequestBody Horse horse) {
         return scheduleService.getMinutes(horse);
+        //todo replace horse to horseName
     }
 }
